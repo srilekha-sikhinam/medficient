@@ -1,21 +1,10 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Nov 21 12:27:30 2022
-
-@author: Mitch.Burke
-"""
-
 import pandas as pd
 
 ############################### DATA INGESTION ################################
 
 # Import the two datasets 
-df_18 = pd.read_csv('data/raw/Hospital_Inpatient_Discharges__SPARCS_De-Identified___2018.csv')
-df_17 = pd.read_csv('data/raw/Hospital_Inpatient_Discharges__SPARCS_De-Identified___2017.csv')
-
-# Assign a 'year' flag to each of the datasets
-df_18['year'] = 2018
-df_17['year'] = 2017
+df_18 = pd.read_csv('Hospital_Inpatient_Discharges__SPARCS_De-Identified___2018.csv')
+df_17 = pd.read_csv('Hospital_Inpatient_Discharges__SPARCS_De-Identified___2017.csv')
 
 # Look at the column names for the '18 dataset
 print('18 Dataset')
@@ -60,7 +49,7 @@ print(df.shape, '\n')
 ################################ DATA EXPORT ##################################
 
 # Write to a csv 
-df.to_csv('data\processed\Hospital_Inpatient_Discharges_17_18.csv')
+df.to_csv('Hospital_Inpatient_Discharges_17_18.csv', index = False)
 
 # Print export note
 print('Data Extracted')
