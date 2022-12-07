@@ -119,10 +119,6 @@ def insert():
 	payment_typology = clicked_payment_typology.get()
 	er_indicator = clicked_er_indicator.get()
 
-	print(hospital_service_area)
-	print(apr_drg_code)
-	print(apr_risk_of_mortality)
-
 	feature_arr = {
 		'Hospital Service Area': hospital_service_area, 
 		'Hospital County': hospital_county, 
@@ -171,13 +167,36 @@ def insert():
 	}
 
 	predicted_days = get_prediction(feature_arr, options_arr)
-	predicted_days_label = Label(root, text="Predicted Length of Stay is " + predicted_days[0] + " days", font=("Arial", 16), bg="light green")
-	predicted_days_label.grid(row=12, column=1)
 
 	hospital_service_area_entry.focus_set()
 
 	clear()
-	
+	clicked_age_group_drop.config(state= "disabled")
+	clicked_gender_drop.config(state= "disabled")
+	clicked_race_drop.config(state= "disabled")
+	clicked_ethnicity_drop.config(state= "disabled")
+	clicked_type_of_admission_drop.config(state="disabled")
+	clicked_ccsr_diagnosis_code_drop.config(state="disabled")
+	clicked_ccsr_procedure_code_drop.config(state="disabled")
+	clicked_apr_drg_code_drop.config(state="disabled")
+	clicked_apr_mdc_code_drop.config(state="disabled")
+	clicked_apr_severity_of_illness_code_drop.config(state="disabled")
+	clicked_apr_risk_of_mortality_drop.config(state="disabled")
+	clicked_apr_drg_code_drop.config(state="disabled")
+	clicked_apr_med_surg_desc_drop.config(state="disabled")
+	clicked_payment_typology_drop.config(state="disabled")
+	clicked_er_indicator_drop.config(state="disabled")
+	submit.config(state="disabled")
+
+	#Set the geometry of Tkinter frame
+
+	top= Toplevel(root)
+	top.geometry("450x250")
+	top.title("Predictions")
+	Label(top, text= "Predictions:\nLength of Stay: " + predicted_days[0] + " days").place(x=150,y=80)
+	x = root.winfo_x()
+	y = root.winfo_y()
+	top.geometry("+%d+%d" %(x+200,y+200))
 
 
 # Driver code
@@ -187,7 +206,7 @@ if __name__ == "__main__":
 	root = Tk()
 
 	# set the background colour of GUI window
-	root.configure(background='light green')
+	root.configure(background='#BFBFEF')
 
 	# set the title of GUI window
 	root.title("Patient Information Form")
@@ -196,45 +215,45 @@ if __name__ == "__main__":
 	root.geometry("1100x600")
 
 	# create a Name label
-	hospital_service_area_label = Label(root, text="Hospital Service Area", bg="light green")
+	hospital_service_area_label = Label(root, text="Hospital Service Area", bg="#BFBFEF")
 
 	# create a Course label
-	hospital_county_label = Label(root, text="Hospital County", bg="light green")
+	hospital_county_label = Label(root, text="Hospital County", bg="#BFBFEF")
 
 	# create a Semester label
-	perm_facility_id_label = Label(root, text="Permanent Facility ID", bg="light green")
+	perm_facility_id_label = Label(root, text="Permanent Facility ID", bg="#BFBFEF")
 
 	# create a Form No. label
-	age_group_label = Label(root, text="Age Group", bg="light green")
+	age_group_label = Label(root, text="Age Group", bg="#BFBFEF")
 
 	# create a Contact No. label
-	gender_label = Label(root, text="Gender", bg="light green")
+	gender_label = Label(root, text="Gender", bg="#BFBFEF")
 
 	# create a Email id label
-	race_label = Label(root, text="Race", bg="light green")
+	race_label = Label(root, text="Race", bg="#BFBFEF")
 
 	# create a address label
-	ethnicity_label = Label(root, text="Ethnicity", bg="light green")
+	ethnicity_label = Label(root, text="Ethnicity", bg="#BFBFEF")
 
-	admission_type_label = Label(root, text="Type of Admission", bg="light green")
+	admission_type_label = Label(root, text="Type of Admission", bg="#BFBFEF")
 
-	ccsr_diagnosis_code_label = Label(root, text="CCSR Diagnosis Code", bg="light green")
+	ccsr_diagnosis_code_label = Label(root, text="CCSR Diagnosis Code", bg="#BFBFEF")
 
-	ccsr_procedure_code_label = Label(root, text="CCSR Procedure Code", bg="light green")
+	ccsr_procedure_code_label = Label(root, text="CCSR Procedure Code", bg="#BFBFEF")
 
-	apr_drg_code_label = Label(root, text="APR DRG Code", bg="light green")
+	apr_drg_code_label = Label(root, text="APR DRG Code", bg="#BFBFEF")
 
-	apr_mdc_label = Label(root, text="APR MDC Code", bg="light green")
+	apr_mdc_label = Label(root, text="APR MDC Code", bg="#BFBFEF")
 
-	apr_severity_of_illness_code_label = Label(root, text="APR Severity of Illness Code", bg="light green")
+	apr_severity_of_illness_code_label = Label(root, text="APR Severity of Illness Code", bg="#BFBFEF")
 
-	apr_risk_of_mortality_label = Label(root, text="APR Risk of Mortality", bg="light green")
+	apr_risk_of_mortality_label = Label(root, text="APR Risk of Mortality", bg="#BFBFEF")
 
-	apr_med_surg_description_label = Label(root, text="APR Medical Surgical Desciption", bg="light green")
+	apr_med_surg_description_label = Label(root, text="APR Medical Surgical Desciption", bg="#BFBFEF")
 
-	payment_typology_1_label = Label(root, text="Payment Typology", bg="light green")
+	payment_typology_1_label = Label(root, text="Payment Typology", bg="#BFBFEF")
 
-	emergency_department_indicator_label = Label(root, text="Emergency Department Indicator", bg="light green")
+	emergency_department_indicator_label = Label(root, text="Emergency Department Indicator", bg="#BFBFEF")
 
 	hospital_service_area_options = ['Hudson Valley', 'New York City', 'Western NY', 'Central NY', 'Capital/Adirond', 'Finger Lakes', 'Long Island', 'Southern Tier']
 
@@ -412,7 +431,7 @@ if __name__ == "__main__":
 
 	# create a Submit Button and place into the root window
 	submit = Button(root, text="Submit", fg="Black",
-							bg="Red", command=insert)
+							bg="#686883", command=insert)
 	submit.grid(row=9, column=3, sticky='ew')
 
 	# start the GUI
