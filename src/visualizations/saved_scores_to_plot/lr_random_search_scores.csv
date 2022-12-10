@@ -1,0 +1,7 @@
+subpopluation,best_params,best_scores
+all,"{'n_estimators': 650, 'min_samples_split': 5, 'min_samples_leaf': 2, 'max_depth': 110, 'class_weight': 'balanced', 'bootstrap': True}",0.2466121202147609
+194.0,"{'n_estimators': 750, 'min_samples_split': 5, 'min_samples_leaf': 2, 'max_depth': 90, 'class_weight': 'balanced_subsample', 'bootstrap': True}",0.19914568623787796
+140.0,"{'n_estimators': 200, 'min_samples_split': 2, 'min_samples_leaf': 4, 'max_depth': 40, 'class_weight': 'balanced_subsample', 'bootstrap': True}",0.18547724303804589
+750.0,"{'n_estimators': 650, 'min_samples_split': 10, 'min_samples_leaf': 2, 'max_depth': 40, 'class_weight': 'balanced', 'bootstrap': True}",0.18960720180224142
+463.0,"{'n_estimators': 500, 'min_samples_split': 2, 'min_samples_leaf': 2, 'max_depth': 20, 'class_weight': 'balanced', 'bootstrap': True}",0.2021850731599656
+302.0,"{'n_estimators': 300, 'min_samples_split': 5, 'min_samples_leaf': 4, 'max_depth': 100, 'class_weight': 'balanced', 'bootstrap': True}",0.25847583313565664

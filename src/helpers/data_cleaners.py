@@ -44,7 +44,6 @@ def convert_column_data_types(df):
 #Return the correct dataframe
 def load_data(drg_code):
     filename = get_subpop_file(drg_code)
-    print(filename)
     df = pd.read_csv(get_subpop_file(drg_code))
     df.drop(columns=['APR DRG Description', 'Patient Disposition'], inplace=True)
     df = encode_ordinal_variables(df)

@@ -1,0 +1,13 @@
+model,subpopluation,best_params,best_scores
+RandomForestClassifier,all,"{'n_estimators': 650, 'min_samples_split': 5, 'min_samples_leaf': 2, 'max_depth': 110, 'class_weight': 'balanced', 'bootstrap': True}",0.2466121202147609
+RandomForestClassifier,194.0,"{'n_estimators': 750, 'min_samples_split': 5, 'min_samples_leaf': 2, 'max_depth': 90, 'class_weight': 'balanced_subsample', 'bootstrap': True}",0.19914568623787796
+RandomForestClassifier,140.0,"{'n_estimators': 200, 'min_samples_split': 2, 'min_samples_leaf': 4, 'max_depth': 40, 'class_weight': 'balanced_subsample', 'bootstrap': True}",0.18547724303804589
+RandomForestClassifier,750.0,"{'n_estimators': 650, 'min_samples_split': 10, 'min_samples_leaf': 2, 'max_depth': 40, 'class_weight': 'balanced', 'bootstrap': True}",0.18960720180224142
+RandomForestClassifier,463.0,"{'n_estimators': 500, 'min_samples_split': 2, 'min_samples_leaf': 2, 'max_depth': 20, 'class_weight': 'balanced', 'bootstrap': True}",0.2021850731599656
+RandomForestClassifier,302.0,"{'n_estimators': 300, 'min_samples_split': 5, 'min_samples_leaf': 4, 'max_depth': 100, 'class_weight': 'balanced', 'bootstrap': True}",0.25847583313565664
+LogisticRegression,all,"{'n_estimators': 200, 'min_samples_split': 10, 'min_samples_leaf': 1, 'max_depth': 20, 'class_weight': 'balanced_subsample', 'bootstrap': True}",0.2620075392541033
+LogisticRegression,194.0,"{'n_estimators': 250, 'min_samples_split': 10, 'min_samples_leaf': 4, 'max_depth': 50, 'class_weight': 'balanced', 'bootstrap': True}",0.1829664955825484
+LogisticRegression,140.0,"{'n_estimators': 550, 'min_samples_split': 5, 'min_samples_leaf': 4, 'max_depth': 50, 'class_weight': 'balanced_subsample', 'bootstrap': True}",0.23284037126456955
+LogisticRegression,750.0,"{'n_estimators': 800, 'min_samples_split': 5, 'min_samples_leaf': 2, 'max_depth': 70, 'class_weight': 'balanced', 'bootstrap': True}",0.18185932133288685
+LogisticRegression,463.0,"{'n_estimators': 150, 'min_samples_split': 10, 'min_samples_leaf': 2, 'max_depth': 70, 'class_weight': 'balanced', 'bootstrap': False}",0.20203691301666318
+LogisticRegression,302.0,"{'n_estimators': 750, 'min_samples_split': 2, 'min_samples_leaf': 2, 'max_depth': 100, 'class_weight': 'balanced_subsample', 'bootstrap': True}",0.25151775472195864
