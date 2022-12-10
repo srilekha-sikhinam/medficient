@@ -191,9 +191,9 @@ def insert():
 	#Set the geometry of Tkinter frame
 
 	top= Toplevel(root)
-	top.geometry("450x250")
+	top.geometry("500x250")
 	top.title("Predictions")
-	Label(top, text= "Predictions:\nLength of Stay: " + predicted_days[0] + " days").place(x=150,y=80)
+	Label(top, text= "Predictions:\nLength of Stay: " + predicted_days[0][0].replace('to', '-') + " days\n" + "Total Cost: $" + predicted_days[1][0].replace(' - ', ' - $'), font=("Arial", 12)).place(x=150,y=80)
 	x = root.winfo_x()
 	y = root.winfo_y()
 	top.geometry("+%d+%d" %(x+200,y+200))
