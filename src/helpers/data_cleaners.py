@@ -50,9 +50,8 @@ def convert_column_data_types(df):
 #Return the correct dataframe
 def load_data(drg_code):
     filename = get_subpop_file(drg_code)
-    print(filename)
     df = get_subpop_file(drg_code)
-#     df.drop(columns=['APR DRG Description', 'Patient Disposition'], inplace=True)
+    df.drop(columns=['APR DRG Description', 'CCSR Diagnosis Description', 'CCSR Procedure Description', 'APR DRG Description', 'APR Severity of Illness Description', 'Patient Disposition'], inplace=True)
     df = encode_ordinal_variables(df)
     df = fill_nan_values(df)
     df = convert_column_data_types(df)

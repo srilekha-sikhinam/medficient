@@ -12,7 +12,7 @@ from sklearn.metrics import log_loss, f1_score, classification_report, make_scor
 
 #Encodes variables and returns the train/test sets with the correct columns and encodings
 def get_train_test_data(df):
-    X = df.loc[:, ~df.columns.isin(['Length of Stay', 'Total Costs', 'Total Charges', 'Patient Disposition', 'Length of Stay Bin'])]
+    X = df.loc[:, ~df.columns.isin(['Length of Stay', 'Total Costs', 'Total Charges', 'Length of Stay Bin'])]
     y = df[['Length of Stay Bin']]
 
     categorical_columns = list(df.select_dtypes(include='object'))
@@ -27,7 +27,7 @@ def get_train_test_data(df):
 
 def get_cost_train_test_data(df):
     df = df.dropna()
-    X = df.loc[:, ~df.columns.isin(['Total Costs', 'Total Charges', 'Total Costs Bin','Length of Stay', 'Patient Disposition'])]
+    X = df.loc[:, ~df.columns.isin(['Total Costs', 'Total Charges', 'Total Costs Bin','Length of Stay'])]
     y = df[['Total Costs Bin']]
 
     categorical_columns = list(df.select_dtypes(include='object'))
