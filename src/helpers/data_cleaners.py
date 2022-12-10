@@ -5,17 +5,23 @@ import numpy as np
 def get_subpop_file(drg_code):
     print(drg_code)
     if drg_code == 194.0:
-        return '..\data\processed\HID_cleaned_HeartFailure.csv'
+        df = pd.read_csv('data/processed/HID_cleaned_HeartFailure.csv')
+        return df
     elif drg_code == 140.0:
-        return '..\data\processed\HID_cleaned_ChronicObstructivePulmonaryDisease.csv'
+        df = pd.read_csv('data/processed/HID_cleaned_ChronicObstructivePulmonaryDisease.csv')
+        return df
     elif drg_code == 750.0:
-        return '..\data\processed\HID_cleaned_Schizophrenia.csv'
+        df = pd.read_csv('data/processed/HID_cleaned_Schizophrenia.csv')
+        return df
     elif drg_code == 463.0:
-        return '..\data\processed\HID_cleaned_Kidney&UrinaryTractInfections.csv'
+        df = pd.read_csv('data/processed/HID_cleaned_Kidney&UrinaryTractInfections.csv')
+        return df
     elif drg_code == 302.0:
-        return '..\data\processed\HID_cleaned_KneeJointReplacement.csv'
+        df = pd.read_csv('data/processed/HID_cleaned_KneeJointReplacement.csv')
+        return df
     else:
-        return '..\data\processed\Hospital_Inpatient_Discharges_17_18_cleaned.csv'
+        df = pd.read_csv('data/processed/Hospital_Inpatient_Discharges_17_18_cleaned.csv')
+        return df
 
 def encode_ordinal_variables(df):
     #Encode age category as ordinal labels with youngest age group being the lowest value
@@ -44,8 +50,9 @@ def convert_column_data_types(df):
 #Return the correct dataframe
 def load_data(drg_code):
     filename = get_subpop_file(drg_code)
-    df = pd.read_csv(get_subpop_file(drg_code))
-    df.drop(columns=['APR DRG Description', 'Patient Disposition'], inplace=True)
+    print(filename)
+    df = get_subpop_file(drg_code)
+#     df.drop(columns=['APR DRG Description', 'Patient Disposition'], inplace=True)
     df = encode_ordinal_variables(df)
     df = fill_nan_values(df)
     df = convert_column_data_types(df)
