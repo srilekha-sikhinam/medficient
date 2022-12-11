@@ -9,9 +9,10 @@ from model_building_helpers import *
 import pandas as pd
 
 model_folder = 'models'
+data_file_path = 'data'
 
 def train_all_pop_model(best_params):
-    df = load_data('all')
+    df = load_data('all', data_file_path)
     bins = [1, 5000, 10000, 15000, 20000, 30000, 50000, 1250000]
     labels = ['1 - 5000', '5001 - 10000', '10001 - 15000', '15001 - 20000'
           , '20001 - 30000', '30001 - 50000', '50001 - 1250000']
@@ -21,7 +22,7 @@ def train_all_pop_model(best_params):
 
 
 def train_heart_patient_model(best_params):
-    df = load_data(194.0)
+    df = load_data(194.0, data_file_path)
     bins = [1, 5000, 10000, 15000, 20000, 30000, 50000, 1250000]
     labels = ['1 - 5000', '5001 - 10000', '10001 - 15000', '15001 - 20000'
           , '20001 - 30000', '30001 - 50000', '50001 - 1250000']
@@ -31,7 +32,7 @@ def train_heart_patient_model(best_params):
 
 
 def train_knee_rep_patient_model(best_params):
-    df = load_data(302.0)
+    df = load_data(302.0, data_file_path)
     bins = [1, 5000, 10000, 15000, 20000, 30000, 50000, 1250000]
     labels = ['1 - 5000', '5001 - 10000', '10001 - 15000', '15001 - 20000'
           , '20001 - 30000', '30001 - 50000', '50001 - 1250000']
@@ -41,7 +42,7 @@ def train_knee_rep_patient_model(best_params):
 
 
 def train_kidney_patient_model(best_params):
-    df = load_data(463.0)
+    df = load_data(463.0, data_file_path)
     bins = [1, 5000, 10000, 15000, 20000, 30000, 50000, 1250000]
     labels = ['1 - 5000', '5001 - 10000', '10001 - 15000', '15001 - 20000'
           , '20001 - 30000', '30001 - 50000', '50001 - 1250000']
@@ -51,7 +52,7 @@ def train_kidney_patient_model(best_params):
 
 
 def train_schizophrenia_patient_model(best_params):
-    df = load_data(750.0)
+    df = load_data(750.0, data_file_path)
     bins = [1, 5000, 10000, 15000, 20000, 30000, 50000, 1250000]
     labels = ['1 - 5000', '5001 - 10000', '10001 - 15000', '15001 - 20000'
           , '20001 - 30000', '30001 - 50000', '50001 - 1250000']
@@ -61,7 +62,7 @@ def train_schizophrenia_patient_model(best_params):
 
 
 def train_copd_patient_model(best_params):
-    df = load_data(140.0)
+    df = load_data(140.0, data_file_path)
     bins = [1, 5000, 10000, 15000, 20000, 30000, 50000, 1250000]
     labels = ['1 - 5000', '5001 - 10000', '10001 - 15000', '15001 - 20000'
           , '20001 - 30000', '30001 - 50000', '50001 - 1250000']

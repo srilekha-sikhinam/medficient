@@ -2,25 +2,25 @@ import pandas as pd
 import numpy as np
 
 #Gets the dataset for the correct code and returns it as a dataframe
-def get_subpop_file(drg_code):
+def get_subpop_file(drg_code, data_file_path):
     print(drg_code)
     if drg_code == 194.0:
-        df = pd.read_csv('data/processed/HID_cleaned_HeartFailure.csv')
+        df = pd.read_csv(data_file_path + '/processed/HID_cleaned_HeartFailure.csv')
         return df
     elif drg_code == 140.0:
-        df = pd.read_csv('data/processed/HID_cleaned_ChronicObstructivePulmonaryDisease.csv')
+        df = pd.read_csv(data_file_path + '/processed/HID_cleaned_ChronicObstructivePulmonaryDisease.csv')
         return df
     elif drg_code == 750.0:
-        df = pd.read_csv('data/processed/HID_cleaned_Schizophrenia.csv')
+        df = pd.read_csv(data_file_path + '/processed/HID_cleaned_Schizophrenia.csv')
         return df
     elif drg_code == 463.0:
-        df = pd.read_csv('data/processed/HID_cleaned_Kidney&UrinaryTractInfections.csv')
+        df = pd.read_csv(data_file_path + '/processed/HID_cleaned_Kidney&UrinaryTractInfections.csv')
         return df
     elif drg_code == 302.0:
-        df = pd.read_csv('data/processed/HID_cleaned_KneeJointReplacement.csv')
+        df = pd.read_csv(data_file_path + '/processed/HID_cleaned_KneeJointReplacement.csv')
         return df
     else:
-        df = pd.read_csv('data/processed/Hospital_Inpatient_Discharges_17_18_cleaned.csv')
+        df = pd.read_csv(data_file_path + '/processed/Hospital_Inpatient_Discharges_17_18_cleaned.csv')
         return df
 
 def encode_ordinal_variables(df):
@@ -48,9 +48,8 @@ def convert_column_data_types(df):
     return df
 
 #Return the correct dataframe
-def load_data(drg_code):
-    filename = get_subpop_file(drg_code)
-    df = get_subpop_file(drg_code)
+def load_data(drg_code, data_file_path):
+    df = get_subpop_file(drg_code, data_file_path)
     df.drop(columns=['APR DRG Description', 'CCSR Diagnosis Description', 'CCSR Procedure Description', 'APR DRG Description', 'APR Severity of Illness Description', 'Patient Disposition'], inplace=True)
     df = encode_ordinal_variables(df)
     df = fill_nan_values(df)
