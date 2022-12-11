@@ -18,6 +18,7 @@ def get_train_test_data(df):
     categorical_columns = list(df.select_dtypes(include='object'))
 
     X = pd.get_dummies(X)
+    print(X.columns)
 
     X = X.loc[:, ~X.columns.isin(categorical_columns)]
 
