@@ -1,8 +1,14 @@
 #This file trains all the models based on the best parameters we found earlier and saves
 # the models as pickle files
 import sys
-sys.path.insert(0, 'src\helpers')
-sys.path.insert(0, 'src\models')
+import platform
+plat = platform.system()
+if plat == 'Windows':
+    sys.path.insert(0, 'src\helpers')
+    sys.path.insert(0, 'src\models')
+elif plat =='Linux' or plat=='Darwin':
+    sys.path.insert(0, 'src/helpers')
+    sys.path.insert(0, 'src/models')
 from data_processing import *
 from data_cleaners import *
 from model_building_helpers import *

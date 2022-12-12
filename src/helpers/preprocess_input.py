@@ -6,9 +6,10 @@ def clean_input(input_feature_arr, options):
     patient_info_df['Permanent Facility Id'] = patient_info_df['Permanent Facility Id'].astype('float64')
     patient_info_df['CCSR Diagnosis Code'] = patient_info_df['CCSR Diagnosis Code'].astype('int64')
     patient_info_df['CCSR Procedure Code'] = patient_info_df['CCSR Procedure Code'].astype('int64')
-    patient_info_df['APR Severity of Illness Code'] = patient_info_df['APR Severity of Illness Code'].astype('int64')
+    #patient_info_df['APR Severity of Illness Code'] = patient_info_df['APR Severity of Illness Code'].astype('int64')
     patient_info_df['Age Group'] = encode_age(input_feature_arr['Age Group'])
     patient_info_df['APR Risk of Mortality'] = encode_risk_of_mortality(input_feature_arr['APR Risk of Mortality'])
+    patient_info_df['APR Severity of Illness Code'] = encode_risk_of_mortality(input_feature_arr['APR Severity of Illness Code'])
     patient_info_df['Emergency Department Indicator'] = get_er_dept_indicator(input_feature_arr['Emergency Department Indicator'])
     categorical_columns = list(patient_info_df.select_dtypes(include='object'))
     for col in categorical_columns:

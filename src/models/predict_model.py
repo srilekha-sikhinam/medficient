@@ -1,6 +1,12 @@
 import sys
-sys.path.insert(0, '..\src\helpers')
-sys.path.insert(0, '..\src\models')
+import platform
+plat = platform.system()
+if plat == 'Windows':
+    sys.path.insert(0, 'src\helpers')
+    sys.path.insert(0, 'src\models')
+elif plat =='Linux' or plat=='Darwin':
+    sys.path.insert(0, 'src/helpers')
+    sys.path.insert(0, 'src/models')
 
 import pandas as pd
 import numpy as np
