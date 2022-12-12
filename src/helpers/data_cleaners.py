@@ -3,7 +3,6 @@ import numpy as np
 
 #Gets the dataset for the correct code and returns it as a dataframe
 def get_subpop_file(drg_code, data_file_path):
-    print(drg_code)
     if drg_code == 194.0:
         df = pd.read_csv(data_file_path + '/processed/HID_cleaned_HeartFailure.csv')
         return df

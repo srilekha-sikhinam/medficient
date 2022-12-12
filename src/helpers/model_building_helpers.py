@@ -18,7 +18,6 @@ def get_train_test_data(df):
     categorical_columns = list(df.select_dtypes(include='object'))
 
     X = pd.get_dummies(X)
-    print(X.columns)
 
     X = X.loc[:, ~X.columns.isin(categorical_columns)]
 
@@ -51,7 +50,6 @@ def get_best_rf_params(X_train, y_train, param_grid, iterations):
     # Fit on data
     best_params = clf.best_params_
     best_score = clf.best_score_
-    print(best_score)
     return best_params, best_score
 
 def get_best_gbc_params(X_train, y_train, param_grid, iterations):
@@ -62,7 +60,6 @@ def get_best_gbc_params(X_train, y_train, param_grid, iterations):
     # Fit on data
     best_params = clf.best_params_
     best_score = clf.best_score_
-    print(best_params, best_score)
     return best_params, best_score
 
 #Run randomizedsearch to get the best parameters for LogisticRegression

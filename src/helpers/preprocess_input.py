@@ -6,7 +6,6 @@ def clean_input(input_feature_arr, options):
     patient_info_df['Permanent Facility Id'] = patient_info_df['Permanent Facility Id'].astype('float64')
     patient_info_df['CCSR Diagnosis Code'] = patient_info_df['CCSR Diagnosis Code'].astype('int64')
     patient_info_df['CCSR Procedure Code'] = patient_info_df['CCSR Procedure Code'].astype('int64')
-    #patient_info_df['APR Severity of Illness Code'] = patient_info_df['APR Severity of Illness Code'].astype('int64')
     patient_info_df['Age Group'] = encode_age(input_feature_arr['Age Group'])
     patient_info_df['APR Risk of Mortality'] = encode_risk_of_mortality(input_feature_arr['APR Risk of Mortality'])
     patient_info_df['APR Severity of Illness Code'] = encode_risk_of_mortality(input_feature_arr['APR Severity of Illness Code'])
