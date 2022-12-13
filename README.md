@@ -1,4 +1,8 @@
-# medficient
+# Data Science Approaches in Medicine
+## Leveraging novel machine learning techniques to model New York patients’ total hospital costs and length of stay
+
+This project was completed by Mitchell Burke, Urvi Joshi and Srilekha Sikhinam.
+
 # Project Goals
 The overall goals of this project are to build a model that can predict length of stay and total costs for patients at New York hospitals at the time of their admission. This project also seeks to find if a hospital should build different models for each condition type or if one general model can suffice. Finally the output of this project is an interactive form where users can enter patient admission information and recieve a prediciton of their estimated length of stay and total cost.
 
