@@ -9,7 +9,6 @@ if plat == 'Windows':
 elif plat =='Linux' or plat=='Darwin':
     sys.path.insert(0, 'src/helpers')
     sys.path.insert(0, 'src/models')
-from data_processing import *
 from data_cleaners import *
 from model_building_helpers import *
 import pandas as pd
@@ -51,7 +50,7 @@ def train_knee_rep_patient_model(best_params):
           , '20001 - 30000', '30001 - 50000', '50001 - 1250000']
     df['Total Costs Bin'] = pd.cut(x = df['Total Costs'], bins = bins, labels = labels, include_lowest = True)
     X, y, X_train, X_test, y_train, y_test = get_cost_train_test_data(df)
-        if plat == 'Windows':
+    if plat == 'Windows':
         filename = '\\knee_rep_patient_cost_model.pkl'
     elif plat =='Linux' or plat=='Darwin':
         filename = '//knee_rep_patient_cost_model.pkl'
@@ -64,7 +63,7 @@ def train_kidney_patient_model(best_params):
           , '20001 - 30000', '30001 - 50000', '50001 - 1250000']
     df['Total Costs Bin'] = pd.cut(x = df['Total Costs'], bins = bins, labels = labels, include_lowest = True)
     X, y, X_train, X_test, y_train, y_test = get_cost_train_test_data(df)
-        if plat == 'Windows':
+    if plat == 'Windows':
         filename = '\\kidney_patient_cost_model.pkl'
     elif plat =='Linux' or plat=='Darwin':
         filename = '//kidney_patient_cost_model.pkl'
@@ -78,7 +77,7 @@ def train_schizophrenia_patient_model(best_params):
           , '20001 - 30000', '30001 - 50000', '50001 - 1250000']
     df['Total Costs Bin'] = pd.cut(x = df['Total Costs'], bins = bins, labels = labels, include_lowest = True)
     X, y, X_train, X_test, y_train, y_test = get_cost_train_test_data(df)
-        if plat == 'Windows':
+    if plat == 'Windows':
         filename = '\\schizophrenia_patient_cost_model.pkl'
     elif plat =='Linux' or plat=='Darwin':
         filename = '//schizophrenia_patient_cost_model.pkl'
@@ -92,7 +91,7 @@ def train_copd_patient_model(best_params):
           , '20001 - 30000', '30001 - 50000', '50001 - 1250000']
     df['Total Costs Bin'] = pd.cut(x = df['Total Costs'], bins = bins, labels = labels, include_lowest = True)
     X, y, X_train, X_test, y_train, y_test = get_cost_train_test_data(df)
-        if plat == 'Windows':
+    if plat == 'Windows':
         filename = '\\copd_patient_cost_model.pkl'
     elif plat =='Linux' or plat=='Darwin':
         filename = '//copd_patient_cost_model.pkl'
