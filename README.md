@@ -13,7 +13,7 @@ Use the following command to clone the repo
 git clone https://github.com/srilekha-sikhinam/medficient.git
 ```
 ## Install required packages
-The following command will install all required libraries for the project
+The following command will install all required libraries for the project. Note: Please use python version 3.9.2 or above
 ```
 pip install -r requirements.txt
 ```
