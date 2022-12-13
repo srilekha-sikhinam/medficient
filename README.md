@@ -28,7 +28,7 @@ After navigating to those links, click 'Export' and select the 'CSV' button. Thi
 
 The datasets can also be accessed in this GoogleDrive Folder: https://drive.google.com/drive/folders/16ArFAaK9vJiAV9V8LqEI7vqeHtvA-X2V
 
-Please use either of those resources to download the data files and save them to the data/raw directory. Please do not change any default file names. In addition, please make sure to delete any data files that are present when cloning the git repository. This includes any files in the data/raw folder and data/processed folder. When you download the entire dataset and place the files in data/raw, the pipeline.ipynb file will recreate the datasets that are currently in the data/processed folder.
+Please use either of those resources to download the data files and save them to the data/raw directory. Please do not change any default file names. In addition, after you add the files to the data/raw folder please make sure to delete any data and pre-trained model files that are present when cloning the git repository. This includes any files in the data/raw folder, data/processed, and models/ folder. When you download the entire dataset and place the files in data/raw, the pipeline.ipynb file will recreate the datasets that are currently in the data/processed folder.
 
 # Data Pipeline
 To run our code please run the pipeline.ipynb notebook. That notebook runs our data pipeline and creates the cleaned datasets, the models, and outputs our form. The pipeline is as follows:<br />
